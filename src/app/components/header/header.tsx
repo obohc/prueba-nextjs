@@ -1,4 +1,5 @@
-import Logo from "./Logo";
+import Logo from "./logo";
+
 
 type Props = {
   logoAlignment: "start" | "center" | "end";

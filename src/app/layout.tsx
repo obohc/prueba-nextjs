@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { inter } from '@/app/lib/fonts';
+import { SearchHistoryProvider } from "./context/searchHistoryContext";
 import "./globals.css";
 
 
@@ -13,9 +14,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="es">
-      <body className={`${inter.className} antialiased min-h-screen`}>{children}</body>
+      <body className={`${inter.className} min-h-screen`}>
+        <SearchHistoryProvider>
+          {children}
+        </SearchHistoryProvider>
+      </body>
     </html>
   );
 }
